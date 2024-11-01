@@ -3,31 +3,54 @@ import java.util.Scanner;
 public class IT24104176Lab3Q3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Enter the amount in rupees: ");
+       
+        System.out.print("Enter the amount: ");
         int amount = scanner.nextInt();
-        
-   
-        calculateDenominations(amount);
-    }
-
-    public static void calculateDenominations(int amount) {
-        int[] denominations = {5000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
-        String[] labels = {"5000 Notes", "1000 Notes", "500 Notes", "200 Notes", "100 Notes", 
-                           "50 Notes", "20 Notes", "10 Notes", "5 Notes", "2 Notes", "1 Notes"};
-        
-        for (int i = 0; i < denominations.length; i++) {
-            int count = getCount(amount, denominations[i]);
-            amount = reduceAmount(amount, denominations[i], count);
-            System.out.println(labels[i] + " = " + count);
-        }
-    }
-
-    public static int getCount(int amount, int denomination) {
-        return amount / denomination;
-    }
-
-    public static int reduceAmount(int amount, int denomination, int count) {
-        return amount % denomination;
+       
+        int notes5000 = amount / 5000;
+        amount %= 5000;
+       
+        int notes1000 = amount / 1000;
+        amount %= 1000;
+       
+        int notes500 = amount / 500;
+        amount %= 500;
+       
+        int notes200 = amount / 200;
+        amount %= 200;
+       
+        int notes100 = amount / 100;
+        amount %= 100;
+       
+        int notes50 = amount / 50;
+        amount %= 50;
+       
+        int notes20 = amount / 20;
+        amount %= 20;
+       
+        int notes10 = amount / 10;
+        amount %= 10;
+       
+        int coins5 = amount / 5;
+        amount %= 5;
+       
+        int coins2 = amount / 2;
+        amount %= 2;
+       
+        int coins1 = amount;
+       
+        System.out.println("5000 Notes - " + notes5000);
+        System.out.println("1000 Notes - " + notes1000);
+        System.out.println("500 Notes - " + notes500);
+        System.out.println("200 Notes - " + notes200);
+        System.out.println("100 Notes - " + notes100);
+        System.out.println("50 Notes - " + notes50);
+        System.out.println("20 Notes - " + notes20);
+        System.out.println("10 Notes - " + notes10);
+        System.out.println("5 Coins - " + coins5);
+        System.out.println("2 Coins - " + coins2);
+        System.out.println("1 Coins - " + coins1);
+       
+        scanner.close();
     }
 }
