@@ -12,8 +12,7 @@ public class IT24104176Lab3Q4 {
             for (int i = 0; i < numberString.length(); i++) {
                 System.out.print(numberString.charAt(i) + " ");
             }
-        } else {
-            System.out.println("Please enter a five-digit number:");
         }
+        
     }
 }
